@@ -14,8 +14,8 @@
       }
 
       const handleWindowLoad = () => {
-        if (window.web3) {
-          window.web3.version.getNetwork((err, netId) => {
+        if (web3) {
+          web3.version.getNetwork((err, netId) => {
             if (!err) {
               document.getElementById("title").innerText = "Done!"
             }
