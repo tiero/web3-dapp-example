@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+  <html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dapp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/javascript">
+      window.addEventListener('load', () => handleWindowLoad())
+
+      const reload = () => {
+        window.location.replace(window.location.pathname + window.location.search + window.location.hash)
+      }
+
+      const handleWindowLoad = () => {
+        if (window.web3) {
+          window.web3.version.getNetwork((err, netId) => {
+            if (!err) {
+              document.getElementById("title").innerText = "Done!"
+            }
+          })
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <button onclick="reload()">Reload</button>
+    <h1 id="title"> Please Inject web3 somehow </h1>
+  </body>
+
+  </html>
